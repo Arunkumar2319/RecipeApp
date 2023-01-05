@@ -1,0 +1,20 @@
+<h3><b>Add Recipe</b></h3>
+<div class="row m-4">
+    <div class="col-md-6">
+   
+   
+    <form [formGroup]="recipeForm" (ngSubmit)="onAddRecipe()">
+        <div class="row">
+            <label><b>Recipe Name</b></label>
+            <input type="text" class="form-control" formControlName="name">
+        </div><br>
+        <div class="row">
+            <label><b>Description</b></label>
+            <textarea class="form-control" formControlName="description"></textarea>
+        </div><br>
+        <div class="row">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+    </form>
+    </div>
+</div>
