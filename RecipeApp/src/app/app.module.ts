@@ -10,12 +10,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReipeListComponent,
-    AddRecipeComponent
+    AddRecipeComponent,
+    EditRecipeComponent
   ],
   imports: [
     BrowserModule,

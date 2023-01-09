@@ -15,21 +15,25 @@
     <!-- </div>
     </div> -->
 </ul>
+
 <div class="row" >
     <div class="col-md-12" >
         <div class="card"  *ngFor="let data of posts | async" >
             <div class="container">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                     <img src={{data.image}} alt="" style="width:50%">
                     </div>
-                    <div class="col-md-3">
-                        <span class="glyphicon" >&#x270f;</span>&nbsp;&nbsp;
+                    <div class="col-md-4">
+                        <!-- <span class="glyphicon" >&#x270f;</span>&nbsp;&nbsp;
                         <span ><i class="bi bi-info-circle" ></i></span>
-                        <svg (click)="onItemSelectRecipe(data)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                        <svg (click)="onItemSelectRecipe(data)" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                             <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                          </svg>
+                          </svg> -->
+                          <a class="btn btn-primary" style="font-size:10px" (click)="getId(data)">Edit</a>
+                          <button class="btn btn-danger" style="font-size:10px" (click)="deleteRecipe(data.id)">Delete</button>
+
                     </div>
                 </div>
               <h4 class="mt-2"><b>{{data.name}}</b></h4>
@@ -66,3 +70,30 @@
             </table>
         </div>
       </div> -->
+
+      
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <label><b>Recipe Name</b></label>
+                    <input type="text" class="form-control" [(ngModel)]="recipeData.name">
+                </div>
+                <div class="row">
+                    <label><b>Description</b></label>
+                    <textarea  class="form-control" [(ngModel)]="recipeData.description"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  (click)="updateRecipe(recipeData)">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,20 @@
+<div class="row">
+    <h3><b>Update Recipe</b></h3>
+    <form [formGroup]="editPostForm" (ngSubmit)="onUpdate()">
+    <div class="col-md-6">
+        <div class="row">
+            <label><b>Recipe Name</b></label>
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="row">
+            <label><b>Description</b></label>
+            <textarea  class="form-control" formControlName="description"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success" >Update</button>
+        </div>
+    </div>
+    </form>
+</div>
