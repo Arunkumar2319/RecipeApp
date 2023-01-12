@@ -69,11 +69,36 @@ function errorHandler(data){
         return errValue = undefined
     }
 }
-module.exports = errorHandler;
+// Use below
+// module.exports = errorHandler;
 
-// function comparisonHandler(value){
-//     let result = 1
-//     if(value < 75){
-//         return result =
-//     }
-// }
+
+
+
+
+function fetchData(){
+    let data = [{name:'Rahul',age:23},{name:'Altof',age:25}]
+}
+// module.exports = fetchData;
+
+
+
+// Using arraycontaining 
+function checkArray(n) {
+    let answer = [];
+    for (let i = 0; i < n; i++) {
+      answer.push(Math.floor(Math.random() * 6 + 1));
+    }
+    return answer;
+  }
+
+//   module.exports = checkArray;
+
+
+// Error throwing
+function checkDrink(drink){
+    if(drink === 'Musk Milan'){
+        throw new drinkError("called musk millan")
+    }
+} 
+module.exports = checkDrink;
